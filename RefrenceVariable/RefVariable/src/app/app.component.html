@@ -1,1 +1,22 @@
-<app-demo></app-demo>
+<h1>PaRENT COMP</h1>
+<app-demo>
+    <h1>Content from Parent using ng-content</h1>
+</app-demo>
+
+<!-- LifeCycle Hook -->
+
+<div class="container">
+    <p appHover setBackground>This is a demo html content to understand directive in Angular</p>
+    <input type="text" #input>
+    <button (click)="onSubmit(input)">Submit</button>
+<div >
+    <app-demo [value]="inputText" >
+        {{destroy}}
+        <h1>This is projected Content{{inputText}}</h1>
+    </app-demo>
+</div>
+    
+    <br><br>
+    <button (click)="DestroyC()">Destroy</button>
+ </div>
+

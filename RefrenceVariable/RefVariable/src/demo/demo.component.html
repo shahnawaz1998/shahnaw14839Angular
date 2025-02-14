@@ -1,3 +1,10 @@
 <input type="text" #myVar (keyup)="0">
 <button (click)="Validate(myVar)">Click</button>
 <p>{{myVar.value}}</p>
+<ng-content></ng-content>
+
+<!-- LifeCycle Hooks -->
+<div class="demo">
+    <p>The text you entered is: {{value}}</p>
+    <ng-content></ng-content>
+</div>
