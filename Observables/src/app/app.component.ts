@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {from, Observable, of} from 'rxjs';
+import { SubjectComponent } from './subject/subject.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [SubjectComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
