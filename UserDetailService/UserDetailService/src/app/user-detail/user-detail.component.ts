@@ -15,7 +15,11 @@ export class UserDetailComponent implements OnInit{
   constructor(private userService:UserService){}
 
  ngOnInit(){
-    this.userService.onShowDetailsClicked.subscribe((data:{name:string,job:string,gender:string,country:string,age:number})=>{
+    // this.userService.onShowDetailsClicked.subscribe((data:{name:string,job:string,gender:string,country:string,age:number})=>{
+    //   this.user = data;
+    // })
+
+    this.userService.mySubject.subscribe((data:any)=>{
       this.user = data;
     })
  }
