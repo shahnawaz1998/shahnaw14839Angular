@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-testimony',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './testimony.component.html',
   styleUrl: './testimony.component.css'
 })

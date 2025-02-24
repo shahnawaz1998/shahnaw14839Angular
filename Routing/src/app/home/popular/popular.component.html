@@ -27,7 +27,8 @@
         </div>
     </div>
     <div class="popular-course-bottom">
-        <button class="go-to-course-button">
+        <!-- <button class="go-to-course-button" routerLink="/Courses">  One way to route to courses page using routerLink -->
+       <button class="go-to-course-button"(click)='navigateToCourses()'>  <!-- Another way to router using programmatically from ts file -->
             Go to Courses Page 
             <i class="fa fa-arrow-right" aria-hidden="true"></i>
         </button>
