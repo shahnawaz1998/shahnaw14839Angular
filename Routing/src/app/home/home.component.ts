@@ -4,7 +4,7 @@ import { PopularComponent } from './popular/popular.component';
 import { TestimonyComponent } from './testimony/testimony.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ServicesComponent } from './services/services.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule,DOCUMENT } from '@angular/common';
 import { ServicesService } from '../Services/services.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -17,6 +17,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   activeRoute:ActivatedRoute = inject(ActivatedRoute);
+  // document:Document = inject(Document)
   ngOnInit(): void {
     this.activeRoute.fragment.subscribe((data)=>{
       // console.log(data)
