@@ -31,7 +31,9 @@ export const routes: Routes = [
     },
     {
         path: 'Contact',
-        component:ContactComponent
+        component:ContactComponent,
+        canDeactivate:[(comp:ContactComponent)=>{return comp.canExit();}]
+        // canDeactivate:[AuthGuardService] Interface method for AngulaR BELOW 14
     },
     {
         path: 'Courses',
@@ -42,7 +44,7 @@ export const routes: Routes = [
     //     component:CourseDetailComponent
     // },
     {
-        path:'Courses', children:[
+        path:'Courses',canActivateChild:[CanActivate], children:[
             {
                 path:"Course/:id",component:CourseDetailComponent
             },
@@ -53,7 +55,7 @@ export const routes: Routes = [
             //     path:"Checkout", component:CheckoutComponent , canActivate : [AuthGuardService]  this uses old Angular way of canActivate interface
             // }
             {
-                path:"Checkout",component:CheckoutComponent, canActivate:[CanActivate] // Here canActivate is function in auth.guard.ts file 
+                path:"Checkout",component:CheckoutComponent, //canActivate:[CanActivate] Here canActivate is function in auth.guard.ts file 
             }
         ]
     },
