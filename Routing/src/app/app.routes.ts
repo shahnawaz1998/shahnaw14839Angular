@@ -9,6 +9,7 @@ import { PopularComponent } from './home/popular/popular.component';
 import { LoginComponent } from './login/login.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { AuthGuardService } from './Services/authguard.service';
+import { CanActivate } from './auth.guard';
 
 export const routes: Routes = [
     {
@@ -48,8 +49,11 @@ export const routes: Routes = [
             {
                 path:"Popular", component:PopularComponent
             },
+            // {
+            //     path:"Checkout", component:CheckoutComponent , canActivate : [AuthGuardService]  this uses old Angular way of canActivate interface
+            // }
             {
-                path:"Checkout", component:CheckoutComponent , canActivate : [AuthGuardService]
+                path:"Checkout",component:CheckoutComponent, canActivate:[CanActivate] // Here canActivate is function in auth.guard.ts file 
             }
         ]
     },
